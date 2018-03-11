@@ -14,7 +14,11 @@ public class Point_1D {
         this.x = x;
     }
 
-    public double getDistance() {
+    public double getDistanceFromZero() {
         return Math.abs(this.x);
+    }
+
+    public void print() {
+        System.out.println("Point: x: " + this.x);
     }
 }

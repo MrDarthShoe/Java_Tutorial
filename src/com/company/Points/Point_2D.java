@@ -16,7 +16,13 @@ public class Point_2D extends Point_1D {
         this.y = y;
     }
 
-    public double getDistance() {
+    public double getDistanceFromZero() {
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
+
+    public void print() {
+        System.out.println("Point: x: " + this.x + " y: " + this.y);
+    }
+
+    public String toString() { return "(x_" + this.x + " y_" + this.y + ")";}
 }
