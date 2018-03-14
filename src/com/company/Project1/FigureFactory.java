@@ -23,10 +23,9 @@ public class FigureFactory {
 
         switch (whichFigure) {
             case 0:
-
                 result_figure = createCircle(
                         new Point_2D(r.nextInt(Constants.WINDOW_WIDTH), r.nextInt(Constants.WINDOW_HEIGHT)),
-                        r.nextInt(50));
+                        r.nextInt(150));
                 break;
             case 1:
                 result_figure = createTriangle(
@@ -35,10 +34,11 @@ public class FigureFactory {
                         new Point_2D(r.nextInt(Constants.WINDOW_WIDTH), r.nextInt(Constants.WINDOW_HEIGHT)));
                 break;
             case 2:
-                int a = r.nextInt(Constants.WINDOW_WIDTH);
-                int b = r.nextInt(Constants.WINDOW_HEIGHT);
-                int c = a + r.nextInt(50);
-                int d = b + r.nextInt(50);
+                int bok = r.nextInt(150);
+                int a = r.nextInt(Constants.WINDOW_WIDTH - bok);
+                int b = r.nextInt(Constants.WINDOW_HEIGHT - bok);
+                int c = a + bok;
+                int d = b + bok;
                 result_figure = createSquare(
                         new Point_2D(a, b),
                         new Point_2D(c, d));

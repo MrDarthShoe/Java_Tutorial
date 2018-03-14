@@ -14,8 +14,6 @@ public class Square implements Figure {
         this.rightLower = rightLower;
     }
 
-
-
     public Point_2D getLeftUpper() {
         return leftUpper;
     }
@@ -40,7 +38,20 @@ public class Square implements Figure {
     @Override
     public void draw(Graphics g) {
         g.setColor(Color.RED);
-        g.fillRect((int)this.leftUpper.getX(), (int)this.leftUpper.getY(),(int)this.rightLower.getX(),(int)this.rightLower.getY());
+        g.fillRect((int)this.leftUpper.getX(), (int)this.leftUpper.getY(),(int)this.rightLower.getX() - (int)this.leftUpper.getX(),(int)this.rightLower.getY() -(int)this.leftUpper.getY());
     }
 
+    @Override
+    public boolean isInside(Point_2D point) {
+        return  point.getX() > leftUpper.getX()  &&
+                point.getX() < rightLower.getX() &&
+                point.getY() > leftUpper.getY()  &&
+                point.getY() < rightLower.getY();
+    }
+
+    @Override
+    public void moveUp(int n) {
+        this.leftUpper.setY(this.leftUpper.getY() - n);
+        this.rightLower.setY(this.rightLower.getY() - n);
+    }
 }

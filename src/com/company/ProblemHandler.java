@@ -3,9 +3,7 @@ package com.company;
 import com.company.Points.Point_1D;
 import com.company.Points.Point_2D;
 import com.company.Points.Point_3D;
-import com.company.Project1.Figure;
-import com.company.Project1.FigureFactory;
-import com.company.Project1.GraphicsHandler;
+import com.company.Project1.*;
 
 import java.io.*;
 import java.util.*;
@@ -29,9 +27,8 @@ public class ProblemHandler {
     }
 
     private void project1() {
-        GraphicsHandler graphics = new GraphicsHandler();
-
-        graphics.run();
+        Project1 project = new Project1(5);
+        project.run();
     }
 
     private void pointsProblem() {

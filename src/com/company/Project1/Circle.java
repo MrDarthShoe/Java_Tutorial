@@ -37,7 +37,16 @@ public class Circle implements Figure {
     @Override
     public void draw(Graphics g) {
         g.setColor(Color.GREEN);
-        g.fillOval((int)this.center.getX(), (int)this.center.getY(),  (int)this.radius, (int)this.radius);
+        g.fillOval((int)(this.center.getX() - radius), (int)(this.center.getY() - radius),  2 * (int)this.radius, 2 * (int)this.radius);
     }
 
+    @Override
+    public boolean isInside(Point_2D point) {
+        return radius > Math.sqrt(Math.pow((int)center.getX() - (int)point.getX(),2) + Math.pow((int)center.getY() - (int)point.getY(),2) );
+    }
+
+    @Override
+    public void moveUp(int n) {
+        this.center.setY(this.center.getY() - n);
+    }
 }

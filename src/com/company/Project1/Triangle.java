@@ -3,8 +3,10 @@ package com.company.Project1;
 import com.company.Points.Point_2D;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 
 public class Triangle implements Figure {
+
     private Point_2D a, b, c;
 
     public Triangle(Point_2D a, Point_2D b, Point_2D c) {
@@ -50,5 +52,25 @@ public class Triangle implements Figure {
         Polygon p = new Polygon(x, y, 3);
         g.setColor(Color.BLUE);
         g.fillPolygon(p);
+    }
+
+    private double sign(Point_2D a, Point_2D b, Point_2D c) {
+        return (a.getX() - c.getX()) * (b.getY() - c.getY()) - (b.getX() - c.getX()) * (a.getY() - c.getY());
+    }
+
+    @Override
+    public boolean isInside(Point_2D point) {
+        boolean b1 = sign(point, a, b) < 0.0;
+        boolean b2 = sign(point, b, c) < 0.0;
+        boolean b3 = sign(point, c, a) < 0.0;
+
+        return ((b1 == b2) && (b2 == b3));
+    }
+
+    @Override
+    public void moveUp(int n) {
+        this.a.setY(this.a.getY() - n);
+        this.b.setY(this.b.getY() - n);
+        this.c.setY(this.c.getY() - n);
     }
 }
