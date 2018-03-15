@@ -5,6 +5,12 @@ import java.awt.event.KeyListener;
 
 public class KeyInput implements KeyListener {
 
+    private FigureProcessor _figure_processor;
+
+    public KeyInput(FigureProcessor _figure_processor) {
+        this._figure_processor = _figure_processor;
+    }
+
     @Override
     public void keyTyped(KeyEvent e) {
 
@@ -12,27 +18,7 @@ public class KeyInput implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-
-        int key_id = e.getKeyCode();
-        switch (key_id) {
-            case KeyEvent.VK_DOWN:
-                System.out.println("down");
-                break;
-            case KeyEvent.VK_LEFT:
-                System.out.println("left");
-                break;
-            case KeyEvent.VK_RIGHT:
-                System.out.println("right");
-                break;
-            case KeyEvent.VK_UP:
-                System.out.println("up");
-                break;
-            case KeyEvent.VK_DELETE:
-                System.out.println("delete");
-                break;
-            default:
-                break;
-        }
+        _figure_processor.handleKeyboardInput(e);
     }
 
     @Override

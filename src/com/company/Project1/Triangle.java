@@ -73,4 +73,26 @@ public class Triangle implements Figure {
         this.b.setY(this.b.getY() - n);
         this.c.setY(this.c.getY() - n);
     }
+
+    @Override
+    public void moveDown(int n) {
+        this.a.setY(this.a.getY() + n);
+        this.b.setY(this.b.getY() + n);
+        this.c.setY(this.c.getY() + n);
+    }
+
+    @Override
+    public void moveLeft(int n) {
+        this.a.setX(this.a.getX() - n);
+        this.b.setX(this.b.getX() - n);
+        this.c.setX(this.c.getX() - n);
+
+    }
+
+    @Override
+    public void moveRight(int n) {
+        this.a.setX(this.a.getX() + n);
+        this.b.setX(this.b.getX() + n);
+        this.c.setX(this.c.getX() + n);
+    }
 }

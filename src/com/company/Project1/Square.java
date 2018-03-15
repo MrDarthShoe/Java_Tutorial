@@ -54,4 +54,22 @@ public class Square implements Figure {
         this.leftUpper.setY(this.leftUpper.getY() - n);
         this.rightLower.setY(this.rightLower.getY() - n);
     }
+
+    @Override
+    public void moveDown(int n) {
+        this.leftUpper.setY(this.leftUpper.getY() + n);
+        this.rightLower.setY(this.rightLower.getY() + n);
+    }
+
+    @Override
+    public void moveLeft(int n) {
+        this.leftUpper.setX(this.leftUpper.getX() - n);
+        this.rightLower.setX(this.rightLower.getX() - n);
+    }
+
+    @Override
+    public void moveRight(int n) {
+        this.leftUpper.setX(this.leftUpper.getX() + n);
+        this.rightLower.setX(this.rightLower.getX() + n);
+    }
 }

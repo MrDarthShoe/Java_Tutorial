@@ -4,31 +4,18 @@ import com.company.Points.Point_2D;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
 public class MouseInput implements MouseListener {
 
-    private ArrayList<Figure> _figures;
-    private Figure _focused_figure;
-    private boolean _is_focus_found;
+    private FigureProcessor _figure_processor;
 
-    public MouseInput(ArrayList<Figure> _figures) {
-        _is_focus_found = false;
-        this._figures = _figures;
+    public MouseInput(FigureProcessor figure_processor) {
+        _figure_processor = figure_processor;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        Point_2D p = new Point_2D(e.getX(), e.getY());
-        for (Figure i : _figures) {
-            if (i.isInside(p)) {
-                _focused_figure = i;
-                _is_focus_found = true;
-                i.moveUp(10);
-                System.out.println("Selected figure at point: " + p.toString());
-                return;
-            }
-        }
+        _figure_processor.handleMouseInput(new Point_2D(e.getX(), e.getY()));
     }
 
     @Override

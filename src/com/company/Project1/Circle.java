@@ -49,4 +49,19 @@ public class Circle implements Figure {
     public void moveUp(int n) {
         this.center.setY(this.center.getY() - n);
     }
+
+    @Override
+    public void moveDown(int n) {
+        this.center.setY(this.center.getY() + n);
+    }
+
+    @Override
+    public void moveLeft(int n) {
+        this.center.setX(this.center.getX() - n);
+    }
+
+    @Override
+    public void moveRight(int n) {
+        this.center.setX(this.center.getX() + n);
+    }
 }
