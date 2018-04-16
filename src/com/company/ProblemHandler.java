@@ -4,6 +4,7 @@ import com.company.Points.Point_1D;
 import com.company.Points.Point_2D;
 import com.company.Points.Point_3D;
 import com.company.Project1.*;
+import com.company.Snailz.Engine.Engine;
 
 import java.io.*;
 import java.util.*;
@@ -21,9 +22,18 @@ public class ProblemHandler {
             case 3:
                 project1();
                 break;
+            case 4:
+                snailz();
+                break;
             default:
                 System.out.println("No such problem in ProblemHandler!");
         }
+    }
+
+    private void snailz() {
+        Engine engine = new Engine();
+
+        engine.run();
     }
 
     private void project1() {

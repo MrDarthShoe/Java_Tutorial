@@ -1,5 +1,8 @@
 package com.company.Project1;
 
+import com.company.ComplexNumber;
+import com.company.Constants;
+
 import javax.swing.*;
 
 public class GraphicsHandler {

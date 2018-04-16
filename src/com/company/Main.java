@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         ProblemHandler handler = new ProblemHandler();
 
-        handler.solve(3);
+        handler.solve(4);
     }
 }
 

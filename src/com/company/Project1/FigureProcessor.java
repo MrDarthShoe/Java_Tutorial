@@ -39,6 +39,7 @@ public class FigureProcessor {
             int key_id = e.getKeyCode();
             switch (key_id) {
                 case KeyEvent.VK_DOWN:
+
                     _focused_figure.moveDown(FIGURES_SPEED);
                     break;
                 case KeyEvent.VK_LEFT:

@@ -66,4 +66,5 @@ public class ComplexNumber {
     public void setRe(double re) {
         this.re = re;
     }
+
 }

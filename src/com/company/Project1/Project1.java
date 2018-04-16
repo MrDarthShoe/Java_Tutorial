@@ -2,7 +2,7 @@ package com.company.Project1;
 
 import java.util.ArrayList;
 
-import static com.company.Project1.Constants.SKIP_TICKS;
+import static com.company.Constants.SKIP_TICKS;
 
 public class Project1 {
     private ArrayList<Figure> _figures;
